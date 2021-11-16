@@ -8,6 +8,31 @@
   </head>
   <body>
     <main>
+      <section id='modal' class="modal hide">
+        <div class="modal__content">
+          <span class="modal__close">X</span>
+          <h1 class="title">Our Team</h1>
+          <p class='card-occupation'>Este Portal es realizado con fines académicos.</p>
+          <div class="team">
+            <div class="card team-card">
+              <img class="card-img" src="images/avatar1.png" alt="avatar" />
+              <p class="card-name">aiden hunter</p>
+              <p class="card-occupation">Founder</p>
+            </div>
+            <div class="card team-card">
+              <img class="card-img" src="images/avatar2.png" alt="avatar" />
+              <p class="card-name">Sergio Mercado</p>
+              <p class="card-occupation">Co-Founder</p>
+            </div>
+            <div class="card team-card">
+              <img class="card-img" src="images/avatar3.png" alt="avatar" />
+              <p class="card-name">Osnaider Miranda</p>
+              <p class="card-occupation">Co-Founder</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
       <header class="header">
         <div class="wrapper">
           <div class="header-menu-content">
@@ -73,12 +98,12 @@
             </div>
             <div class="card team-card">
               <img class="card-img" src="images/avatar2.png" alt="avatar" />
-              <p class="card-name">ethel ramsey</p>
+              <p class="card-name">Sergio Mercado</p>
               <p class="card-occupation">Co-Founder</p>
             </div>
             <div class="card team-card">
               <img class="card-img" src="images/avatar3.png" alt="avatar" />
-              <p class="card-name">fannie stewart</p>
+              <p class="card-name">Osnaider Miranda</p>
               <p class="card-occupation">Co-Founder</p>
             </div>
           </div>
@@ -311,5 +336,22 @@
         </div>
       </footer>
     </main>
+    <script>
+      const modal = document.querySelector(".modal");
+      const closeModalButton = document.querySelector(".modal__close");
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const modalIsOpen = localStorage.getItem("modal-open");
+        if (modalIsOpen) {
+          return
+        }
+        modal.classList.remove("hide")
+        // localStorage.setItem("modal-open", "1"); 
+      })
+
+      closeModalButton.addEventListener("click", () => {
+        modal.classList.add("hide");
+      });
+    </script>
   </body>
 </html>
